@@ -35,8 +35,8 @@ app.use((err, req, res, next) => {
     res.status(500).render('pages/error', { error: 'Что-то пошло не так' });
 });
 
-app.listen(PORT, () => {
-    console.log(`ClickQuest запущен на http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`ClickQuest запущен на http://0.0.0.0:${PORT}`);
 });
 
 module.exports = app;
