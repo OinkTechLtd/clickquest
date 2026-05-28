@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="task-page">
+        <div class="container">
+            <div class="duck-container">
+                <div id="duck" class="duck duck-normal">🦆</div>
+                <div id="duckMessage" class="duck-message"></div>
+            </div>
+
+            <h1>Выполнение задания</h1>
+            
+            <div id="taskContent" class="task-content">
+                <div class="task-card large">
+                    <div class="task-icon" id="taskIcon">📋</div>
+                    <h2 id="taskTitle">Загрузка...</h2>
+                    <p id="taskDescription">Пожалуйста, подождите</p>
+                    <a id="taskLink" href="#" target="_blank" class="btn btn-primary btn-lg">Перейти к заданию</a>
+                </div>
+                
+                <div class="warning">
+                    <p>⚠️ Откройте ссылку в новой вкладке и выполните задание</p>
+                    <p>Вернитесь на эту страницу после выполнения</p>
+                </div>
+
+                <div class="verify-section">
+                    <button id="verifyBtn" class="btn btn-success btn-lg" disabled>Я выполнил задание</button>
+                    <p class="verify-hint">Кнопка активируется через 5 секунд после открытия задания</p>
+                </div>
+            </div>
+
+            <div id="successSection" class="success-section" style="display: none;">
+                <div class="duck-success">
+                    <span class="duck-emoji large">🦆</span>
+                    <h2>Задание выполнено!</h2>
+                    <p>Утка довольна вами!</p>
+                </div>
+                <a id="finalLink" href="#" class="btn btn-primary btn-lg">Перейти по ссылке</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/task.js"></script>
+    <script>
+        const taskId = '<%= taskId %>';
+        initTaskPage(taskId);
+    </script>
+</body>
+</html>

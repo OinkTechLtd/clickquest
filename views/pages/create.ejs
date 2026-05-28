@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">🦆 ClickQuest</a>
+                <ul class="nav-links">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/docs">Docs</a></li>
+                    <li><a href="/create" class="active">Создать</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="create-section">
+            <div class="container">
+                <h1>Создать короткую ссылку с заданием</h1>
+                <p class="subtitle">Вставьте длинную ссылку и добавьте задание для пользователей (опционально)</p>
+
+                <form id="createForm" class="create-form">
+                    <div class="form-group">
+                        <label for="longUrl">Длинная ссылка *</label>
+                        <input type="url" id="longUrl" name="longUrl" placeholder="https://example.com/very-long-url" required>
+                    </div>
+
+                    <div class="task-options">
+                        <h3>Добавить задание (опционально)</h3>
+                        
+                        <div class="form-group">
+                            <label for="taskType">Тип задания</label>
+                            <select id="taskType" name="taskType">
+                                <option value="">Без задания</option>
+                                <option value="website">Посетить сайт</option>
+                                <option value="youtube">YouTube канал/видео</option>
+                                <option value="social">Социальная сеть</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taskUrl">URL задания</label>
+                            <input type="url" id="taskUrl" name="taskUrl" placeholder="https://...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taskDescription">Описание задания</label>
+                            <textarea id="taskDescription" name="taskDescription" rows="3" placeholder="Например: Подпишитесь на наш канал"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg">Создать ссылку</button>
+                </form>
+
+                <div id="resultSection" class="result-section" style="display: none;">
+                    <div class="success-card">
+                        <h2>✅ Ссылка создана!</h2>
+                        <div class="result-box">
+                            <p>Ваша короткая ссылка:</p>
+                            <div class="short-url-display">
+                                <input type="text" id="shortUrlInput" readonly>
+                                <button id="copyBtn" class="btn btn-secondary">Копировать</button>
+                            </div>
+                        </div>
+                        <div class="qr-info">
+                            <p>Поделитесь этой ссылкой с пользователями</p>
+                            <p class="small">Если вы добавили задание, пользователи должны будут его выполнить перед переходом</p>
+                        </div>
+                        <a href="/create" class="btn btn-outline">Создать ещё одну</a>
+                    </div>
+                </div>
+
+                <div id="errorSection" class="error-message" style="display: none;">
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/terms">Условия использования</a>
+                <a href="/privacy">Политика конфиденциальности</a>
+            </div>
+            <p>&copy; 2024 ClickQuest. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="/js/create.js"></script>
+</body>
+</html>

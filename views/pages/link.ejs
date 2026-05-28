@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="link-page">
+        <div class="container">
+            <div class="duck-container">
+                <div id="duck" class="duck duck-normal">🦆</div>
+                <div id="duckMessage" class="duck-message"></div>
+            </div>
+
+            <div id="loadingSection" class="loading-section">
+                <h1>Проверка...</h1>
+                <p id="loadingText">Пожалуйста, подождите</p>
+                <div class="timer" id="timer">60</div>
+            </div>
+
+            <div id="taskSection" class="task-section" style="display: none;">
+                <h1>Задание от автора ссылки</h1>
+                <div class="task-card">
+                    <div class="task-icon" id="taskIcon">📋</div>
+                    <h2 id="taskTitle">Посетите сайт</h2>
+                    <p id="taskDescription">Автор ссылки просит вас выполнить задание</p>
+                    <a id="taskLink" href="#" target="_blank" class="btn btn-primary btn-lg">Выполнить задание</a>
+                </div>
+                <div class="warning">
+                    <p>⚠️ Не закрывайте эту страницу и не нажимайте "Назад" пока не выполните задание!</p>
+                    <p>Утка следит за вами 👀</p>
+                </div>
+                <div class="verify-section">
+                    <button id="verifyBtn" class="btn btn-success btn-lg">Я выполнил задание</button>
+                </div>
+            </div>
+
+            <div id="redirectSection" class="redirect-section" style="display: none;">
+                <h1>Переход по ссылке...</h1>
+                <div class="spinner"></div>
+                <p>Сейчас вы будете перенаправлены</p>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <h1>Ошибка</h1>
+                <p id="errorMessage">Ссылка не найдена или истекла</p>
+                <a href="/" class="btn btn-primary">На главную</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/link.js"></script>
+    <script>
+        const shortCode = '<%= shortCode %>';
+        initLinkPage(shortCode);
+    </script>
+</body>
+</html>
