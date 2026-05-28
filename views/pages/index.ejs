@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">🦆 ClickQuest</a>
+                <ul class="nav-links">
+                    <li><a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>">Главная</a></li>
+                    <li><a href="/faq" class="<%= currentPage === 'faq' ? 'active' : '' %>">FAQ</a></li>
+                    <li><a href="/docs" class="<%= currentPage === 'docs' ? 'active' : '' %>">Docs</a></li>
+                    <li><a href="/create" class="<%= currentPage === 'create' ? 'active' : '' %>">Создать</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>ClickQuest - Умные короткие ссылки с заданиями</h1>
+                <p class="subtitle">Создавайте короткие ссылки и добавляйте задания для пользователей перед переходом</p>
+                
+                <div class="hero-duck">
+                    <span class="duck-emoji">🦆</span>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="/create" class="btn btn-primary btn-lg">Создать ссылку</a>
+                    <a href="/docs" class="btn btn-secondary btn-lg">Документация</a>
+                </div>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>🔗 Короткие ссылки</h3>
+                        <p>Превращаем длинные URL в компактные ссылки через надежный API is.gd</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📋 Задания для пользователей</h3>
+                        <p>Добавляйте задания: посетить сайт, YouTube канал или соцсеть</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>✅ Проверка выполнения</h3>
+                        <p>Задания проверяются автоматически, скип невозможен</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🦆 Утка следит за вами</h3>
+                        <p>Оригинальная утка из Telegram плачет, если нарушить правила</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2>Как это работает?</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Вставьте ссылку</h3>
+                        <p>Разместите длинный URL, который нужно сократить</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Добавьте задание (опционально)</h3>
+                        <p>Укажите задание: посетить сайт, YouTube или соцсеть</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Получите короткую ссылку</h3>
+                        <p>Поделитесь ссылкой с пользователями</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Пользователи выполняют задания</h3>
+                        <p>Перед переходом пользователи должны выполнить задание</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/terms">Условия использования</a>
+                <a href="/privacy">Политика конфиденциальности</a>
+            </div>
+            <p>&copy; 2024 ClickQuest. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Terms and Privacy Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <h2>Добро пожаловать в ClickQuest!</h2>
+            <p>Перед использованием сервиса вы должны принять наши условия:</p>
+            
+            <div class="terms-section">
+                <h3>Условия использования</h3>
+                <p>1. Вы соглашаетесь использовать сервис только в законных целях.</p>
+                <p>2. Запрещено создавать ссылки, ведущие на вредоносный контент.</p>
+                <p>3. Автор ссылки может добавлять задания для пользователей.</p>
+                <p>4. Задания должны быть выполнены для получения доступа к ссылке.</p>
+            </div>
+
+            <div class="terms-section">
+                <h3>Политика конфиденциальности</h3>
+                <p>1. Мы собираем минимальные данные для работы сервиса.</p>
+                <p>2. Мы не передаем ваши данные третьим лицам.</p>
+                <p>3. Статистика переходов хранится анонимно.</p>
+            </div>
+
+            <button id="acceptTerms" class="btn btn-primary">Принять условия</button>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

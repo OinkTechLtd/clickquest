@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">🦆 ClickQuest</a>
+                <ul class="nav-links">
+                    <li><a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>">Главная</a></li>
+                    <li><a href="/faq" class="<%= currentPage === 'faq' ? 'active' : '' %>">FAQ</a></li>
+                    <li><a href="/docs" class="<%= currentPage === 'docs' ? 'active' : '' %>">Docs</a></li>
+                    <li><a href="/create" class="<%= currentPage === 'create' ? 'active' : '' %>">Создать</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-content">
+            <div class="container">
+                <h1>Документация</h1>
+                
+                <div class="doc-section">
+                    <h2>Введение</h2>
+                    <p>ClickQuest - это современный сервис сокращения ссылок с уникальной системой заданий для пользователей.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h2>Быстрый старт</h2>
+                    <ol>
+                        <li>Перейдите на страницу создания ссылки</li>
+                        <li>Вставьте длинный URL</li>
+                        <li>(Опционально) Добавьте задание для пользователей</li>
+                        <li>Получите короткую ссылку</li>
+                        <li>Поделитесь ссылкой</li>
+                    </ol>
+                </div>
+
+                <div class="doc-section">
+                    <h2>Типы заданий</h2>
+                    <ul>
+                        <li><strong>website</strong> - посещение веб-сайта</li>
+                        <li><strong>youtube</strong> - подписка на YouTube канал</li>
+                        <li><strong>social</strong> - переход в социальную сеть (VK, Telegram, etc.)</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h2>API для разработчиков</h2>
+                    <h3>POST /api/create</h3>
+                    <p>Создание новой короткой ссылки</p>
+                    <pre><code>{
+  "longUrl": "https://example.com/very-long-url",
+  "taskType": "website",
+  "taskUrl": "https://example.com/task",
+  "taskDescription": "Посетите наш сайт"
+}</code></pre>
+
+                    <h3>GET /api/link/:shortCode</h3>
+                    <p>Получение информации о ссылке</p>
+
+                    <h3>POST /api/verify-task</h3>
+                    <p>Проверка выполнения задания</p>
+                </div>
+
+                <div class="doc-section">
+                    <h2>Технологии</h2>
+                    <ul>
+                        <li>Node.js + Express</li>
+                        <li>EJS шаблонизатор</li>
+                        <li>is.gd API для сокращения ссылок</li>
+                        <li>File-based хранение данных</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h2>Установка и запуск</h2>
+                    <pre><code>git clone https://github.com/yourusername/clickquest.git
+cd clickquest
+npm install
+npm start</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/terms">Условия использования</a>
+                <a href="/privacy">Политика конфиденциальности</a>
+            </div>
+            <p>&copy; 2024 ClickQuest. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Terms and Privacy Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <h2>Добро пожаловать в ClickQuest!</h2>
+            <p>Перед использованием сервиса вы должны принять наши условия:</p>
+            
+            <div class="terms-section">
+                <h3>Условия использования</h3>
+                <p>1. Вы соглашаетесь использовать сервис только в законных целях.</p>
+                <p>2. Запрещено создавать ссылки, ведущие на вредоносный контент.</p>
+                <p>3. Автор ссылки может добавлять задания для пользователей.</p>
+                <p>4. Задания должны быть выполнены для получения доступа к ссылке.</p>
+            </div>
+
+            <div class="terms-section">
+                <h3>Политика конфиденциальности</h3>
+                <p>1. Мы собираем минимальные данные для работы сервиса.</p>
+                <p>2. Мы не передаем ваши данные третьим лицам.</p>
+                <p>3. Статистика переходов хранится анонимно.</p>
+            </div>
+
+            <button id="acceptTerms" class="btn btn-primary">Принять условия</button>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
